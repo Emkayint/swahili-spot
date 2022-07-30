@@ -1,0 +1,24 @@
+.form{
+  background-color: #151515;
+  height: 100vh;
+  padding: 46px;
+}
+
+.login{
+  height: 100vh;
+}
+
+.header{
+  padding-top: 120px;
+}
+
+.header p{
+  font-size: 46px;
+  font-weight: bold;
+  color: #F3A446;
+}
+
+.display{
+  background-color: #3C415C;
+  height: 100vh;
+}
