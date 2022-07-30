@@ -40,11 +40,19 @@ function Login(){
         <div className="col-6 col-s-5 display">
           <header>
             <p>Welcome To</p>
-            <img
-              src={require('./1.jpeg')}
-              alt="swahili spot" 
-            />
+            <img src={require("./1.jpeg")} alt="swahili spot" />
+            <span>SWAHILI SPOT</span>
           </header>
+          <div className="body">
+            <p>
+              Get the best of coastal meals in Kenya for value of your money
+            </p>
+          </div>
+          <div className="creator">
+            <span>Made With Love</span>
+            <span className="span"></span>
+            <span>Martin Kariuki</span>
+          </div>
         </div>
       </div>
     </div>
