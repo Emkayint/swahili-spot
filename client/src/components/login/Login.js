@@ -1,5 +1,4 @@
 import "./Login.css"
-import { Icon } from "@iconify/react";
 
 function Login(){
 
@@ -12,22 +11,24 @@ function Login(){
           </div>
           <form>
             <div className="username">
-              <Icon
-                icon="icon-park-solid:edit-name"
-                color="#f3a446"
-                width="48"
-                height="48"
-              />
+              <span
+                className="iconify"
+                data-icon="icon-park-solid:edit-name"
+                style={{"color": "#f3a446"}}
+                data-width="48"
+                data-height="48"
+              ></span>
               <input type="text" placeholder="Username" />
             </div>
             <hr />
             <div className="username">
-              <Icon
-                icon="bi:shield-lock-fill"
-                color="#f3a446"
-                width="48"
-                height="48"
-              />
+              <span
+                className="iconify"
+                data-icon="bi:shield-lock"
+                style={{ color: "#f3a446" }}
+                data-width="48"
+                data-height="48"
+              ></span>
               <input type="password" placeholder="password" />
             </div>
             <hr></hr>
