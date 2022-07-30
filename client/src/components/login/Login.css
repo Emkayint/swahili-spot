@@ -20,7 +20,7 @@
 }
 
 .display{
-  background-color: #3C415C;
+  background-color: #F3A446;
   height: 100vh;
 }
 
@@ -76,7 +76,7 @@ header{
 }
 header p{
   font-size: 37px;
-  color: #F3A446;
+  color: #151515;
   font-family: 'Irish Grover', cursive;
 }
 
@@ -87,7 +87,7 @@ header img{
 header span{
   font-size: 37px;
   display: block;
-  color: #F3A446;
+  color: #151515;
   font-family: 'Irish Grover', cursive;
   padding-top: 53px;
 }
@@ -95,13 +95,13 @@ header span{
 .body{
   margin: 43px;
   text-align: center;
-  color: rgba(180, 165, 165, 1);
+  color: #ffff;
 }
 
 .creator{
   margin-top: 10vh;
   font-family: 'Irish Grover', cursive;
-  color: #F3A446;
+  color: #151515;
   display: flex;
   justify-content: space-around;
   height: 30px;
