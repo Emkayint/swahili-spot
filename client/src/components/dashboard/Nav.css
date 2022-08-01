@@ -1,0 +1,42 @@
+.Nav{
+  background-color: #1d1d1d;
+  height: 100vh;
+}
+
+.nav{
+  height: 100vh;
+  background-color: #F3A446;
+  width: 18%;
+}
+
+header{
+  padding-top: 33px;
+  padding-left: 20px;
+  font-size: 30px;
+  font-family: 'Irish Grover', cursive;
+}
+
+.links{
+  padding-top: 112px ;
+}
+
+.user-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 85px; 
+}
+.user-links p{
+  font-size: 18px;
+  padding-left: 20px;
+  font-weight: bolder;
+}
+
+@media only screen and (min-width: 600px) {
+  
+
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
