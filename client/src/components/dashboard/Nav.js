@@ -2,7 +2,7 @@ import "./Nav.css"
 
 function Nav(){
   return (
-      <div className="nav">
+      <div className="nav col-s-3 col-3">
         <header>Swahili Spot</header>
         <div className="links">
           <div className="user-links">

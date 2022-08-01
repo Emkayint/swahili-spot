@@ -1,12 +1,8 @@
-.Nav{
-  background-color: #1d1d1d;
-  height: 100vh;
-}
-
 .nav{
   height: 100vh;
   background-color: #F3A446;
   width: 18%;
+  float: left;
 }
 
 header{

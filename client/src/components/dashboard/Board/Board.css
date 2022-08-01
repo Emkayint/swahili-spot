@@ -1,0 +1,46 @@
+.dash{
+  background-color: rgba(29, 29, 29, .9);
+
+}
+
+.board {
+  width: 82%;
+  height: 100vh;
+  margin-left: 18%;
+  overflow: auto;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header input{
+  width: 50%;
+  margin-left: 5%;
+  height: 35px;
+  background-color: rgba(85, 85, 85, 1);
+  border-radius: 20px;
+  padding-left: 30px;
+  border: none;
+}
+
+.header span{
+  margin-right: 10%;
+  color: white;
+}
+
+.header i{
+  color: #F3A446;
+}
+
+.users{
+  height: 54vh;
+  background-color: rgba(85, 85, 85, 0.7);
+  margin: 10px 10px;
+  border-radius: 10px;
+  width: 98%;
+
+}
