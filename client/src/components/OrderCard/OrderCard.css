@@ -67,12 +67,12 @@
 
 @media only screen and (min-width: 769px) {
   .card{
-  background-color: rgba(29, 29, 29, .9);
-  width: 90%;  
-  height: 600px;
-  margin: 0 auto;
-  border-radius: 20px;
-}
+    background-color: rgba(29, 29, 29, .9);
+    width: 90%;  
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
 
   .cards {
     margin-bottom: 40px;

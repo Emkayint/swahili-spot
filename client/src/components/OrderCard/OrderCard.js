@@ -1,6 +1,6 @@
 import "./OrderCard.css";
 
-const OrderCard = () => {
+const OrderCard = ({name, price, description, image}) => {
 
   return (
     <div className="col-s-6 col-4 cards">
@@ -8,11 +8,11 @@ const OrderCard = () => {
         <br />
         <br />
         <hr className="hr" />
-        <img src={require("./4.jpg")} alt="" className="image" />
+        <img src={image} alt="" className="image" />
         <hr />
         <div className="info">
           <div className="price">
-            ksh 200
+            ksh {price}
           </div>
           <div className="more-info">
             i
@@ -20,7 +20,7 @@ const OrderCard = () => {
         </div>
         <hr />
         <div className="name">
-          <p>Chiken Biriani Friday</p>
+          <p>{ name }</p>
           <button>ADD</button>
         </div>
       </div>
