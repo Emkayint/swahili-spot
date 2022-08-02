@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
   def index
     product = Order.all
-    render json: product, include: :user, status: :ok
+    render json: product, include: [:product, :user], status: :ok
   end
 
   def show
-    product = Product.find(params[:id])
-    render json: product, status: :ok
+    product = Order.find(params[:id])
+    render json: product, include: [:product, :user], status: :ok
   end
 
 
