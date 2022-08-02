@@ -5,3 +5,128 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+product1 = Product.create(
+  name: 'Chicken Grilled Healthy',
+  image: 'https://cdn.pixabay.com/photo/2014/12/30/09/55/chicken-583761_960_720.jpg',
+  description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+  price: 340,
+  amount: 3
+)
+
+product2 = Product.create(
+  name: 'Chicken Breast Salad Healthy',
+  image: 'https://cdn.pixabay.com/photo/2017/09/06/20/07/chicken-2722818_960_720.jpg',
+  description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+  price: 240,
+  amount: 5
+)
+
+product3 = Product.create(
+  name: 'Breast Salad Healthy',
+  image: 'https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_960_720.jpg',
+  description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+  price: 540,
+  amount: 2
+)
+
+product4 = Product.create(
+  name: 'Chicken Breast Biryiani Healthy',
+  image: 'https://cdn.pixabay.com/photo/2017/09/06/20/07/chicken-2722818_960_720.jpg',
+  description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+  price: 300,
+  amount: 5
+)
+
+user1 = User.create(
+  phone: 7420767,
+  username: 'Johnyy',
+  password_digest: "sins"
+)
+
+user2 = User.create(
+  phone: 7897469,
+  username: 'jane',
+  password_digest: "doe"
+)
+
+
+user3 = User.create(
+  phone: 87473678,
+  username: 'Doe',
+  password_digest: "jane"
+)
+
+user4 = User.create(
+  phone: 9874848,
+  username: 'Sammydoe',
+  password_digest: "ole"
+)
+
+order1 = Order.create(
+  user_id: user1.id,
+  quantity: 1,
+  product_id: product2.id,
+  status: "pending"
+)
+
+
+order2 = Order.create(
+  user_id: user1.id,
+  quantity: 1,
+  product_id: product2.id,
+  status: "pending"
+)
+
+
+
+order3 = Order.create(
+  user_id: user1.id,
+  quantity: 1,
+  product_id: product2.id,
+  status: "pending"
+)
+
+
+order1 = Order.create(
+  user_id: user2.id,
+  quantity: 1,
+  product_id: product1.id,
+  status: "pending"
+)
+
+
+
+# Product.create{
+#   [
+#     {
+#       name: "Chicken Grilled Healthy",
+#       image: "https://cdn.pixabay.com/photo/2014/12/30/09/55/chicken-583761_960_720.jpg",
+#       description: "Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love",
+#       price: 340,
+#       amount: 3
+#     },
+#     {
+#       name: 'Chicken Breast Salad Healthy',
+#       image: "https://cdn.pixabay.com/photo/2017/09/06/20/07/chicken-2722818_960_720.jpg",
+#       description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+#       price: 240,
+#       amount: 5
+#     },
+#     {
+#       name: 'Breast Salad Healthy',
+#       image: 'https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_960_720.jpg',
+#       description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+#       price: 540,
+#       amount: 2
+#     },
+#     {
+#       name: 'Chicken Breast Biryiani Healthy',
+#       image: 'https://cdn.pixabay.com/photo/2017/09/06/20/07/chicken-2722818_960_720.jpg',
+#       description: 'Image toast weueh, salad mayoniece, droplets of facius liqudity with ambinguity of warmw mamas love',
+#       price: 300,
+#       amount: 5
+#     }
+#   ]
+# }
+
+# User.create
