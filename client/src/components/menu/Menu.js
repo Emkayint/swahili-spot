@@ -10,7 +10,13 @@ const Menu = () => {
     .then(setProducts)
   }, [])
 
-  const productsToDisplay = products.map(product => (<OrderCard name = {product.name} price = {product.price} image = {product.image} /> ))
+  const productsToDisplay = products.map((product) => (
+    <OrderCard
+      name={product.name}
+      price={product.price}
+      image={product.image}
+    />
+  ));
   return (
     <div className="hero">
       <div className="menu">
