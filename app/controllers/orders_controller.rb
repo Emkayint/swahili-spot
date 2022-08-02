@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def index
-    product = Product.all
-    render json: product, include: :users, status: :ok
+    product = Order.all
+    render json: product, include: :user, status: :ok
   end
 
   def show
