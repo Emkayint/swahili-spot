@@ -4,7 +4,7 @@ function Cards({ color, text }){
 
   return (
     <div className="col-3 col-s-3">
-      <div className="cards" style = {{ "backgroundColor": color}}>
+      <div className="dash-cards" style = {{ "backgroundColor": color}}>
         <span>{ text }</span>
         <h2>250</h2>
       </div>
