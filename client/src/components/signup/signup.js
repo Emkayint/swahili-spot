@@ -28,7 +28,7 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="text" placeholder="Username" />
+              <input type="number" placeholder="Phone" />
             </div>
             <hr className = "hrs" />
             <div className="username">

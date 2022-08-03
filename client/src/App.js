@@ -4,7 +4,7 @@ import './App.css';
 import Login from './components/login/Login';
 import Signup from './components/signup/signup';
 import Menu from './components/menu/Menu';
-
+import Cart from "./components/cart/cart";
 import Board from './components/dashboard/Board/Board';
 import Navbar from './components/Navbar/Navbar';
 
@@ -15,13 +15,14 @@ function App() {
   })
   return (
     <div className="App">
-      <Navbar user = { user } setUser = { setUser }/>
+      <Navbar user={user} setUser={setUser} />
       <div className="routes">
         <Routes>
           <Route path="/" element={<Menu user={user} />} />
           <Route path="/dashboard" element={<Board user={user} />} />
-          <Route path="/login" element={<Login user={user} setUser/>} />
-          <Route path="/signin" element={<Signup user={user} setUser/>} />
+          <Route path="/login" element={<Login user={user} setUser = {setUser}/>} />
+          <Route path="/signin" element={<Signup user={user} setUser = {setUser} />} />
+          <Route path="/cart" element={<Cart user={user} />} />
         </Routes>
       </div>
     </div>

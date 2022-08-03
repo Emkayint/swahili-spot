@@ -4,23 +4,18 @@ const OrderCard = ({name, price, description, image}) => {
 
   return (
     <div className="col-s-6 col-3 cards">
-      <div className="card">
+      <div className="card-menu">
         <br />
         <br />
-        <hr className="hrr" />
+        <span className="hrr"></span>
         <img src={image} alt="" className="image" />
-        <hr />
+        <span className="hrr"></span>
         <div className="info">
-          <div className="price">
-            ksh {price}
-          </div>
-          <div className="more-info">
-            i
-          </div>
+          <div className="price">ksh {price}</div>
+          <div className="more-info">i</div>
         </div>
-        <hr />
         <div className="name">
-          <p>{ name }</p>
+          <p>{name}</p>
           <button>ADD</button>
         </div>
       </div>

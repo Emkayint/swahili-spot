@@ -29,7 +29,7 @@ function Login(){
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="password" placeholder="password" />
+              <input type="password" placeholder="Password" />
             </div>
             <hr></hr>
             <div className="buttons">

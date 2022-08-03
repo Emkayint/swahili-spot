@@ -12,6 +12,9 @@ function Navbar() {
     <NavLink to="/">
       Home
     </NavLink>
+    <NavLink to = "/cart">
+      Cart
+    </NavLink>
     <NavLink to="/login">
       Login
     </NavLink>

@@ -1,7 +1,7 @@
-.card{
-  background-color: rgba(29, 29, 29, .9);
+.card-menu{
+  background-color: rgba(29, 29, 29, 9);
   width: 90%;  
-  height: 450px;
+  height: 550px;
   margin: 0 auto;
   border-radius: 20px;
 }
@@ -11,8 +11,9 @@
 }
 
 .image{
+  padding: 10px;
   width: 100%;
-  height: 150px;
+  height: 200px;
   margin: 35px 0px;
 }
 
@@ -44,6 +45,14 @@
   padding: 20px 20px;
 
 }
+.hrr{
+  width: 100%;
+  height: 1px;
+  background-color: wheat;
+  display: inline-block;
+  margin: 0;
+  padding: 0%;
+}
 
 .name button{
   height: 30px;
@@ -62,11 +71,15 @@
 
 
 @media only screen and (min-width: 600px) {
-
+  .image{
+    width: 100%;
+    height: 250px;
+    margin: 35px 0px;
+  }
 }
 
 @media only screen and (min-width: 769px) {
-  .card{
+  .card-menu{
     background-color: rgba(29, 29, 29, .9);
     width: 90%;  
     height: 600px;
