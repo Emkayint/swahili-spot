@@ -14,7 +14,6 @@ function App() {
     phone: null,
   })
   return (
-    <div className="App">
       <Routes>
         <Route path="/dashboard" element={<Board user={user} />} />
         <Route
@@ -28,7 +27,6 @@ function App() {
         <Route path="/cart" element={<Cart user={user} />} />
         <Route path="/" element={<Menu user={user} />} />
       </Routes>
-    </div>
   );
 }
 
