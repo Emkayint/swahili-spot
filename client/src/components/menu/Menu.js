@@ -3,14 +3,7 @@ import OrderCard from "../OrderCard/OrderCard"
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 const Menu = () => {
-  // const [products, setProducts] = useState([])
   const products = useFetch("/products")
-
-  // useEffect(() => {
-  //   fetch('/products')
-  //   .then(res => res.json())
-  //   .then(setProducts)
-  // }, [])
 
   const productsToDisplay = products.map((product) => (
     <OrderCard

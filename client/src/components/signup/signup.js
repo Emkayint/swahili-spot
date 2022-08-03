@@ -19,7 +19,7 @@ function Signup() {
               ></span>
               <input type="text" placeholder="Username" />
             </div>
-            <hr/>
+            <hr className = "hrs"/>
             <div className="username">
               <span
                 className="iconify"
@@ -30,7 +30,7 @@ function Signup() {
               ></span>
               <input type="text" placeholder="Username" />
             </div>
-            <hr />
+            <hr className = "hrs" />
             <div className="username">
               <span
                 className="iconify"
@@ -41,7 +41,7 @@ function Signup() {
               ></span>
               <input type="password" placeholder="password" />
             </div>
-            <hr></hr>
+            <hr className = "hrs" />
             <div className="buttons">
               <p>Forgot Passord?</p>
               <button type="submit">Sign In</button>

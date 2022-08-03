@@ -7,7 +7,7 @@ const OrderCard = ({name, price, description, image}) => {
       <div className="card">
         <br />
         <br />
-        <hr className="hr" />
+        <hr className="hrr" />
         <img src={image} alt="" className="image" />
         <hr />
         <div className="info">

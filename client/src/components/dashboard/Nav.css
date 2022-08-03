@@ -1,8 +1,12 @@
 .nav{
   height: 100vh;
   background-color: #F3A446;
-  width: 18%;
+  width: 50%;
   float: left;
+  position: fixed;
+  z-index: 67;
+  margin-top: 50px;
+  display: none;
 }
 
 header{
@@ -29,10 +33,24 @@ header{
 }
 
 @media only screen and (min-width: 600px) {
-  
+  .nav{
+  height: 100vh;
+  background-color: #F3A446;
+  width: 18%;
+  float: left;
+  position: unset;
+}
 
 }
 
 @media only screen and (min-width: 768px) {
-  
+  .nav{
+    height: 100vh;
+    background-color: #F3A446;
+    width: 18%;
+    float: left;
+    position: unset;
+    margin-top: 0px;
+    display: block;
+  }
 }
