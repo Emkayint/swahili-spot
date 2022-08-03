@@ -18,11 +18,17 @@ function App() {
       <Navbar user={user} setUser={setUser} />
       <div className="routes">
         <Routes>
-          <Route path="/" element={<Menu user={user} />} />
           <Route path="/dashboard" element={<Board user={user} />} />
-          <Route path="/login" element={<Login user={user} setUser = {setUser}/>} />
-          <Route path="/signin" element={<Signup user={user} setUser = {setUser} />} />
+          <Route
+            path="/login"
+            element={<Login user={user} setUser={setUser} />}
+          />
+          <Route
+            path="/signin"
+            element={<Signup user={user} setUser={setUser} />}
+          />
           <Route path="/cart" element={<Cart user={user} />} />
+          <Route path="/" element={<Menu user={user} />} />
         </Routes>
       </div>
     </div>
