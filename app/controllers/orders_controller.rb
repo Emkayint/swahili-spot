@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
+  # skip_before_action :authorize, only: [:create, :index]
   def index
-    product = Order.all
+    product = Order.where(user_id: session[:user_id])
     render json: product, include: [:product, :user], status: :ok
   end
 

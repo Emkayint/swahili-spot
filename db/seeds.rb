@@ -37,33 +37,10 @@ product4 = Product.create(
   amount: 5
 )
 
-user1 = User.create(
-  phone: 7420767,
-  username: 'Johnyy',
-  password_digest: "sins"
-)
 
-user2 = User.create(
-  phone: 7897469,
-  username: 'jane',
-  password_digest: "doe"
-)
-
-
-user3 = User.create(
-  phone: 87473678,
-  username: 'Doe',
-  password_digest: "jane"
-)
-
-user4 = User.create(
-  phone: 9874848,
-  username: 'Sammydoe',
-  password_digest: "ole"
-)
 
 order1 = Order.create(
-  user_id: user1.id,
+  user_id: 1,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -71,7 +48,7 @@ order1 = Order.create(
 
 
 order2 = Order.create(
-  user_id: user1.id,
+  user_id: 1,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -80,7 +57,7 @@ order2 = Order.create(
 
 
 order3 = Order.create(
-  user_id: user1.id,
+  user_id: 1,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -88,7 +65,7 @@ order3 = Order.create(
 
 
 order1 = Order.create(
-  user_id: user2.id,
+  user_id: 1,
   quantity: 1,
   product_id: product1.id,
   status: "pending"

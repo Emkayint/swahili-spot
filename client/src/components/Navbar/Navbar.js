@@ -15,7 +15,7 @@ function Navbar() {
         setUser(null);
       }
     })
-
+    console.log(user)
   }
   return (
     <div className="navbar">

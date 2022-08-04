@@ -10,6 +10,7 @@ function Signup() {
   const [password, setPassword] = useState('')
   const [errors, setErros] = useState(null)
   const {setUser} = useContext(UserContext)
+  console.log(errors)
 
   function handleSubmit(e){
     e.preventDefault()
