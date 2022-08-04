@@ -11,6 +11,7 @@ const Menu = () => {
       price={product.price}
       image={product.image}
       key = {product.id}
+      id = {product.id}
     />
   ));
   return (

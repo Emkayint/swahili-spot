@@ -18,6 +18,7 @@ function Cart() {
       amount={item.quantity}
       key={item.id}
       id={item.id}
+      price= {item.product.price}
       image= {item.product.image}
     />
   ));

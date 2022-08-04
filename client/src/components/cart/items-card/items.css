@@ -11,6 +11,10 @@
   border-bottom: 1px solid white;
 }
 
+.none{
+  display: none;
+}
+
 .items-card img{
   width: 68px;
   height: 68px;
