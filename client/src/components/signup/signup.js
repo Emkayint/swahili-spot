@@ -1,6 +1,36 @@
+import { useState } from "react";
 import "./signup.css";
 
 function Signup() {
+
+  const [username, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [password, setPassword] = useState('')
+
+  function handleSubmit(e){
+    e.preventDefault()
+
+    const myObject = {
+      username: username,
+      password: password,
+      password_confirmation: password,
+      phone: phone
+    }
+
+    fetch("/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(myObject)
+    })
+    .then(res => res.json())
+    .then(console.log)
+
+  }
+
+
   return (
     <div className="signup">
       <div className="roww">
@@ -8,7 +38,7 @@ function Signup() {
           <div className="header">
             <p>Get Started</p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="username">
               <span
                 className="iconify"
@@ -17,7 +47,7 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" value = {username} onChange = {e => setName(e.target.value)}/>
             </div>
             <hr className = "hrs"/>
             <div className="username">
@@ -28,7 +58,7 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="number" placeholder="Phone" />
+              <input type="number" placeholder="Phone" value={phone} onChange = { e => setPhone(e.target.value)}/>
             </div>
             <hr className = "hrs" />
             <div className="username">
@@ -39,7 +69,7 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="password" placeholder="password" />
+              <input type="password" placeholder="password" value = {password} onChange = {e => setPassword(e.target.value)} />
             </div>
             <hr className = "hrs" />
             <div className="buttons">

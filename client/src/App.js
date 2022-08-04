@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/login/Login';
@@ -7,28 +7,28 @@ import Menu from './components/menu/Menu';
 import Cart from "./components/cart/cart";
 import Board from './components/dashboard/Board/Board';
 import Navbar from './components/Navbar/Navbar';
+import { UserContext } from './context/user';
 
 function App() {
-  const [user, setUser] = useState({
-    username: null,
-    phone: null,
-  })
+  const {user, setUser} = useContext(UserContext)
+  
+  console.log(user)
   return (
     <div className="App">
-      <Navbar user={user} setUser={setUser} />
+      <Navbar />
       <div className="routes">z
         <Routes>
-          <Route path="/dashboard" element={<Board user={user} />} />
+          <Route path="/dashboard" element={<Board />} />
           <Route
             path="/login"
-            element={<Login user={user} setUser={setUser} />}
+            element={<Login/>}
           />
           <Route
             path="/signin"
-            element={<Signup user={user} setUser={setUser} />}
+            element={<Signup />}
           />
-          <Route path="/cart" element={<Cart user={user} />} />
-          <Route path="/" element={<Menu user={user} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Menu />} />
         </Routes>
       </div>
     </div>
