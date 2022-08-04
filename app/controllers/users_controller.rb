@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessed
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+
+  skip_before_action :authorize, only: :create
+
   def create
     user = User.create!(user_params)
     if user.valid?
@@ -9,6 +12,10 @@ class UsersController < ApplicationController
     else 
       render json: { errors: user.errors.full_message }
     end
+  end
+
+  def show
+    render json: @current_user
   end
 
   private

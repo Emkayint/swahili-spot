@@ -11,6 +11,10 @@
   padding: 0% 10% 0% 1%;
 }
 
+.user{
+  color: white;
+}
+
 .logo{
   color: white;
   padding: 5px;
@@ -50,4 +54,18 @@
     font-size: 20px;
   }
 
+  .logout{
+    padding: 5px 20px;
+
+  }
+
+}
+
+.logout{
+  border-radius: 5px;
+  background-color: red;
+  border: none;
+  font-weight: bold;
+  color: white;
+  padding: 5px 5px;
 }

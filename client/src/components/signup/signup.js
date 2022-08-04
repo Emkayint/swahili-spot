@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/user";
 import "./signup.css";
+import Error from "../error/Error";
 
 function Signup() {
 
   const [username, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [password, setPassword] = useState('')
+  const [errors, setErros] = useState(null)
+  const {setUser} = useContext(UserContext)
 
   function handleSubmit(e){
     e.preventDefault()
@@ -25,8 +29,13 @@ function Signup() {
       },
       body: JSON.stringify(myObject)
     })
-    .then(res => res.json())
-    .then(console.log)
+    .then(res => {
+      if(res.ok){
+        res.json().then(user => setUser(user))
+      } else {
+        res.json().then(err => setErros(err.errors))
+      }
+    })
 
   }
 
@@ -47,9 +56,15 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="text" placeholder="Username" value = {username} onChange = {e => setName(e.target.value)}/>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
-            <hr className = "hrs"/>
+            <hr className="hrs" />
             <div className="username">
               <span
                 className="iconify"
@@ -58,9 +73,15 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="number" placeholder="Phone" value={phone} onChange = { e => setPhone(e.target.value)}/>
+              <input
+                type="number"
+                placeholder="Phone"
+                value={phone}
+                required
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
-            <hr className = "hrs" />
+            <hr className="hrs" />
             <div className="username">
               <span
                 className="iconify"
@@ -69,9 +90,18 @@ function Signup() {
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="password" placeholder="password" value = {password} onChange = {e => setPassword(e.target.value)} />
+              <input
+                type="password"
+                placeholder="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-            <hr className = "hrs" />
+            <hr className="hrs" />
+            {errors
+              ? <Error setErros = { setErros }/>
+              : null}
             <div className="buttons">
               <p>Forgot Passord?</p>
               <button type="submit">Sign In</button>

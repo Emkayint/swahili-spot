@@ -1,6 +1,40 @@
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/user";
+import Error from "../error/Error";
 import "./Login.css"
 
 function Login(){
+
+  const [username, setUserName] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [errors, setErros] = useState([])
+  const {setUser} = useContext(UserContext)
+
+  function handleSubmit(e){
+    e.preventDefault()
+    setLoading(!loading)
+  
+
+
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      } else {
+        r.json().then((err) => setErros(err.errors));
+      }
+    });
+
+  }
 
   return (
     <div className="login">
@@ -9,16 +43,21 @@ function Login(){
           <div className="header">
             <p>Get Started</p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="username">
               <span
                 className="iconify"
                 data-icon="icon-park-solid:edit-name"
-                style={{"color": "#f3a446"}}
+                style={{ color: "#f3a446" }}
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </div>
             <hr />
             <div className="username">
@@ -29,11 +68,19 @@ function Login(){
                 data-width="48"
                 data-height="48"
               ></span>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <hr></hr>
+            {
+              errors ? errors.map(err => (<Error message={err} key= {err}/>)) : null
+            }
             <div className="buttons">
-              <p>Forgot Passord?</p>
+              <p>Forgot Password?</p>
               <button type="submit">Sign In</button>
             </div>
           </form>

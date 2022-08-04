@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/login/Login';
@@ -11,21 +11,30 @@ import { UserContext } from './context/user';
 
 function App() {
   const {user, setUser} = useContext(UserContext)
-  
+
+  useEffect(() => {
+    fetch("/me")
+    .then(r => {
+      if(r.ok){
+        r.json().then(user => setUser(user)) 
+      }
+    })
+  }, [setUser])
+
   console.log(user)
   return (
     <div className="App">
       <Navbar />
-      <div className="routes">z
+      <div className="routes">
         <Routes>
           <Route path="/dashboard" element={<Board />} />
           <Route
             path="/login"
-            element={<Login/>}
+            element={!user ? <Login/> : <Menu /> }
           />
           <Route
             path="/signin"
-            element={<Signup />}
+            element={!user ? <Signup /> : <Menu />}
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Menu />} />
