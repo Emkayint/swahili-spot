@@ -7,7 +7,6 @@ function Itemscard({name, amount, id, image, price}){
   const [loading, setLoading] = useState(false)
   const [quantity, setQuantity]= useState(amount)
   const [deleted, setDeleted] = useState(false)
-  console.log(price)
 
   function handleAdd(){
     setLoading(!loading)
@@ -71,8 +70,7 @@ function Itemscard({name, amount, id, image, price}){
         setDeleted(!deleted)
       }
 
-    }
-    )
+    })
 
   }
   return (

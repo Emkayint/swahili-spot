@@ -8,6 +8,7 @@ import Cart from "./components/cart/cart";
 import Board from './components/dashboard/Board/Board';
 import Navbar from './components/Navbar/Navbar';
 import { UserContext } from './context/user';
+import Upload from './components/dashboard/upload/Upload';
 
 function App() {
   const {user, setUser} = useContext(UserContext)
@@ -38,6 +39,7 @@ function App() {
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Menu />} />
+          <Route path= "/upload" element = {<Upload />} />
         </Routes>
       </div>
     </div>

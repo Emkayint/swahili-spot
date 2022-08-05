@@ -3,7 +3,6 @@ import "./OrderCard.css";
 
 const OrderCard = ({name, price, description, image, id}) => {
   const [loading, setLoading] = useState(false);
-  console.log(price)
   function handleClick(){
     setLoading(!loading)
     fetch("/orders", {
@@ -22,6 +21,9 @@ const OrderCard = ({name, price, description, image, id}) => {
           alert("Success")
           setLoading(!loading)
         })
+      } else {
+        alert("You Need To Log In First!")
+        setLoading(!loading)
       }
     })
   }

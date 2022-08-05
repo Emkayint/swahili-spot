@@ -1,15 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext} from "../../context/user";
 import "./cart.css"
 import Contact from "./contact/Contact";
 import Itemscard from "./items-card/items"
 
 function Cart() {
   const [items, setItems] = useState([])
+  const {user} = useContext(UserContext) 
 
   useEffect(() => {
     fetch('/orders')
-    .then(res => res.json())
-    .then(setItems)
+    .then(r => {
+      if(r.ok){
+        r.json().then(setItems)
+      }
+    })
   }, [])
 
   const itemsToDisplay = items.map((item) => (
@@ -23,7 +28,6 @@ function Cart() {
     />
   ));
 
-  console.log(items)
 
   return (
     <div className="cart">
@@ -33,7 +37,8 @@ function Cart() {
             {itemsToDisplay}
         </div>
         <div className="col-s-6 col-4">
-          <Contact items = { items }/>
+          {user ? <Contact items = { items } setItems = {setItems}/> : null }
+          
         </div>
       </div>
     </div>
