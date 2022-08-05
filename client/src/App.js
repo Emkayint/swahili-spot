@@ -22,7 +22,6 @@ function App() {
     })
   }, [setUser])
 
-  console.log(user)
   return (
     <div className="App">
       <Navbar />
