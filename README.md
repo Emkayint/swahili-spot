@@ -1,24 +1,68 @@
-# README
+# Swahili Spot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is online business showcasing the use of available technology to deliver websites fast.
 
-Things you may want to cover:
+## Author
 
-* Ruby version
+#### Martin Kariuki
 
-* System dependencies
+## Description
+Simple design of meal deivery shop
 
-* Configuration
 
-* Database creation
+## Installation
 
-* Database initialization
+### Browser
+* Use any internet browser preffered updated version eg: chrome, mozila, safari
+* Make sure you have internet connection
 
-* How to run the test suite
+### Rails
+  * clone the repo
+  * Use command bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+### Posgress
+  * rails db:create
+  * rails db:seed
 
-* Deployment instructions
+### React
+  * npm install --pefix client
+  * cd client => npm install
 
-* ...
+## Usage / BDD
+
+```
+Click on the link provided.
+This will get you to the menu page
+Browse product
+Create Account for you to purchase 
+Navigate via our nav bar to see more products
+Invite others to join
+```
+
+## Technologies Used
+
+* HTML & CSS - For the page structure and styling
+* Bootsrap - Page responsiveness
+* Javascript / React - Page interactiveness
+* Ruby on Rails / Postgress - Database Managenent
+* Heroku - deployment
+* Figma - Design
+
+## References
+* MDN documentation
+* Activerecords Documentation
+* Sinatra Documentation
+
+## Licence
+[MIT Licence](LICENCE)
+
+## Credits
+* TM Peter 
+
+## Links
+
+* [live link](https://peaceful-lake-78537.herokuapp.com/)
+
+## Contact Me
+ * business.kariukimartin@gmail.com
+ * +254 742075647
