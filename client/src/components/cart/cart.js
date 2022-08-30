@@ -16,6 +16,7 @@ function Cart() {
       }
     })
   }, [])
+  
 
   const itemsToDisplay = items.map((item) => (
     <Itemscard

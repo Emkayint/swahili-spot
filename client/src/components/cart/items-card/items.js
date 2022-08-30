@@ -82,7 +82,7 @@ function Itemscard({name, amount, id, image, price}){
         <span className="span">{quantity}</span>
         <button onClick={handleAdd}>+</button>
       </div>
-      <p>ksh {price}</p>
+      <p>ksh {price * quantity}</p>
       <div className="delete" onClick={handleDelete}>X</div>
     </div>
   );
