@@ -7,19 +7,19 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 def bycrypt(password)
-  BCrypt::Password.create(password)
+  pass = BCrypt::Password.create(password)
 end
 
 user1 = User.create(
   username: "Laban",
-  password: bycrypt("@emkay12"),
+  password_digest: bycrypt("@emkay12"),
   role: "admin",
   phone: 7420745
 )
 
 user2 = User.create(
   username: "Kyai",
-  password: bycrypt("@user12"),
+  password_digest: bycrypt("@user12"),
   role: "user",
   phone: 7420745
 )
@@ -27,7 +27,7 @@ user2 = User.create(
 
 user3 = User.create(
   username: "Emkay",
-  password: bycrypt("@temp12"),
+  password_digest: bycrypt("@temp12"),
   role: "user",
   phone: 742075647
 )
@@ -84,8 +84,8 @@ order2 = Order.create(
 
 
 order3 = Order.create(
-  user_id: user2,id,
-  quantity: 1,
+  user_id: user2.id,
+  quantity: 3,
   product_id: product2.id,
   status: "pending"
 )
