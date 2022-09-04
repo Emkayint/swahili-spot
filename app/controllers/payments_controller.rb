@@ -1,8 +1,8 @@
 class PaymentsController < ApplicationController
 
-  skip_before_action :authorize
+  # skip_before_action :authorize
 
-  @@phone_number = 254742075647
+  @@phone_number = @current_user.phone
   @@short_code = 174_379
   @@passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
   @@callback = "https://locahost/,,,"

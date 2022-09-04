@@ -5,6 +5,33 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+def bycrypt(password)
+  BCrypt::Password.create(password)
+end
+
+user1 = User.create(
+  username: "Laban",
+  password: bycrypt("@emkay12"),
+  role: "admin",
+  phone: 7420745
+)
+
+user2 = User.create(
+  username: "Kyai",
+  password: bycrypt("@user12"),
+  role: "user",
+  phone: 7420745
+)
+
+
+user3 = User.create(
+  username: "Emkay",
+  password: bycrypt("@temp12"),
+  role: "user",
+  phone: 742075647
+)
+
 product1 = Product.create(
   name: 'Chicken Grilled Healthy',
   image: 'https://cdn.pixabay.com/photo/2014/12/30/09/55/chicken-583761_960_720.jpg',
@@ -40,7 +67,7 @@ product4 = Product.create(
 
 
 order1 = Order.create(
-  user_id: 1,
+  user_id: user2.id,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -48,7 +75,7 @@ order1 = Order.create(
 
 
 order2 = Order.create(
-  user_id: 1,
+  user_id: user3.id,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -57,7 +84,7 @@ order2 = Order.create(
 
 
 order3 = Order.create(
-  user_id: 1,
+  user_id: user2,id,
   quantity: 1,
   product_id: product2.id,
   status: "pending"
@@ -65,7 +92,7 @@ order3 = Order.create(
 
 
 order1 = Order.create(
-  user_id: 1,
+  user_id: user3.id,
   quantity: 1,
   product_id: product1.id,
   status: "pending"
