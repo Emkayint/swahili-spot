@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
-  # skip_before_action :authorize, only: [:create, :index]
+  skip_before_action :authorize, only: [:create, :index]
   def index
-    product = Order.where(user_id: session[:user_id]).order("created_at DESC")
-    render json: product, include: [:product, :user], status: :ok
+    render json: @current_user.orders, status: :ok
   end
 
   def show
