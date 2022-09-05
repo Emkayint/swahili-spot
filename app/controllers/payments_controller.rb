@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
 
-  # skip_before_action :authorize
+  skip_before_action :authorize_admin
 
   @@phone_number = @current_user.phone
   @@short_code = 174_379

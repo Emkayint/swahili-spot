@@ -4,6 +4,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   before_action :authorize
+  before_action :authorize_admin
 
   private
 
@@ -14,9 +15,22 @@ class ApplicationController < ActionController::API
       @decoded = JsonWebToken.decode(header)
       @current_user = User.find(@decoded[:user_id])
     rescue ActiveRecord::RecordNotFound => e
-      render json: { errors: e.message }, status: :unauthorized
+      render json: { errors: e.message }, status: :unauthorized, unless @current_user
     rescue JWT::DecodeError => e
-      render json: { errors: e.message }, status: :unauthorized
+      render json: { errors: e.message }, status: :unauthorized, unless @current_user
+    end
+  end
+
+  def authorize_admin
+    header = request.headers['Authorization']
+    header = header.split(' ').last if header
+    begin
+      @decoded = JsonWebToken.decode(header)
+      @current_user = User.find(@decoded[:user_id])
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { errors: e.message }, status: :unauthorized, unless @current_user.role == "admin"
+    rescue JWT::DecodeError => e
+      render json: { errors: e.message }, status: :unauthorized, unless @current_user.role == "admin"
     end
   end
 
