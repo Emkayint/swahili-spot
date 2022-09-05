@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   # end
 
   def create
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_username(params[:email])
     if @user && @user.password == params[:password]
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.now + 24.hours.to_i
