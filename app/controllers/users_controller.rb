@@ -3,15 +3,15 @@ class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   skip_before_action :authorize, only: :create
-  skip_before_action :authorize_admin, only: :create
+  skip_before_action :authorize_admin, only: [:create, :show]
 
   def create
-    user = User.create(user_params)
+    @user = User.create(user_params)
     if user.valid?
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.now + 24.hours.to_i
       render json: { jwt: token, exp: time.strftime('%m-%d-%Y %H:%M'),
-                     username: @user.username, email: @user.phone, role: @user.role }, status: :ok
+                     username: @user.username, email: @user.phone, role: @user.role, phone: @user.phone }, status: :ok
     else 
       render json: { errors: user.errors.full_message }
     end
