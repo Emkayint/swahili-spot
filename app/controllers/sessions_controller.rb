@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.now + 24.hours.to_i
       render json: { jwt: token, exp: time.strftime('%m-%d-%Y %H:%M'),
-                     name: @user.username, email: @user.phone, role: @user.role }, status: :ok
+                     username: @user.username, email: @user.phone, role: @user.role }, status: :ok
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end
