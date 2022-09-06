@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
 
   skip_before_action :authorize_admin
 
-  @@phone_number = if(@current_user) @current_user.phone end
   @@short_code = 174_379
   @@passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
   @@callback = "https://locahost/,,,"
@@ -40,6 +39,6 @@ class PaymentsController < ApplicationController
   end
 
   def call_mpesa
-    Mpesa.new(short_code: @@short_code, passkey: @@passkey, amount: calculate_amount, phone_number: @@phone_number, callback: @@callback, consumer_key: @@consumer_key, consumer_secret: @@consumer_secret, account_reference: @@account_reference, transaction_description: @@transaction_description).request
+    Mpesa.new(short_code: @@short_code, passkey: @@passkey, amount: calculate_amount, phone_number: @current_user.phone, callback: @@callback, consumer_key: @@consumer_key, consumer_secret: @@consumer_secret, account_reference: @@account_reference, transaction_description: @@transaction_description).request
   end
 end
