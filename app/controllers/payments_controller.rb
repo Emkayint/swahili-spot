@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
   def index
     
     res = call_mpesa
-    byebug
+    # byebug
 
   end
   

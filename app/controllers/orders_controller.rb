@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def show
     product = Order.find(params[:id])
-    render json: product, include: [:product, :user], status: :ok
+    render json: product, status: :ok
   end
 
   def create
