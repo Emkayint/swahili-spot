@@ -14,14 +14,12 @@ class PaymentsController < ApplicationController
 
   def create
     amount_pay = calculate_amount
-    byebug
     
   end
 
   def index
     
     res = call_mpesa
-    # byebug
 
   end
   

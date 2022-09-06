@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find_by(id: params[:id])
-    # byebug
     order.update(order_params)
     render json: order, status: :ok
   end
