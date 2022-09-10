@@ -14,14 +14,14 @@ user1 = User.create(
   username: "Laban",
   password_digest: bycrypt("@emkay12"),
   role: "admin",
-  phone: 7420745
+  phone: 742075647
 )
 
 user2 = User.create(
   username: "Kyai",
   password_digest: bycrypt("@user12"),
   role: "user",
-  phone: 7420745
+  phone: 742075647
 )
 
 
