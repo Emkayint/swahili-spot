@@ -25,8 +25,8 @@ Simple design of meal deivery shop
   * rails db:seed
 
 ### React
-  * npm install --pefix client
-  * cd client => npm install
+  * [clone this repo](https://github.com/Emkayint/swahili-client)
+  * npm install client
 
 ## Usage / BDD
 
@@ -57,11 +57,11 @@ Invite others to join
 [MIT Licence](LICENCE)
 
 ## Credits
-* TM Peter 
+* Erick Mwai 
 
 ## Links
 
-* [live link](https://peaceful-lake-78537.herokuapp.com/)
+* [live link](https://swahili-spot.vercel.app/)
 
 ## Contact Me
  * business.kariukimartin@gmail.com
