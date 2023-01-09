@@ -98,6 +98,8 @@ order1 = Order.create(
   status: "pending"
 )
 
+puts '********* done seeding *******'
+
 
 
 # Product.create{
