@@ -10,6 +10,18 @@ def bycrypt(password)
   pass = BCrypt::Password.create(password)
 end
 
+User.all.each do |user| 
+  user.destroy 
+end
+Product.all.each do |product| 
+  product.destroy 
+end
+Order.all.each do |order| 
+  order.destroy  
+end
+
+puts "destroyed all data"
+
 user1 = User.create(
   username: "Laban",
   password_digest: bycrypt("@emkay12"),
@@ -31,6 +43,7 @@ user3 = User.create(
   role: "user",
   phone: 742075647
 )
+
 
 product1 = Product.create(
   name: 'Chicken Grilled Healthy',

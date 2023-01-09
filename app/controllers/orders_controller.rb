@@ -6,12 +6,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    product = Order.find(params[:id])
-    render json: product, status: :ok
+    order = Order.find(params[:id])
+    render json: order, status: :ok
   end
 
   def create
-    product = Order.create(user_id: session[:user_id], product_id: params[:product_id], quantity: 1, status: "pending")
+    product = Order.create(user_id: @current_user.id, product_id: params[:product_id], quantity: 1, status: "pending")
     render json: product, status: :ok
   end
 
