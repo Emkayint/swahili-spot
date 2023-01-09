@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: swahili_spot_production
   username: swahili_spot
   password: <%= ENV["SWAHILI_SPOT_DATABASE_PASSWORD"] %>
